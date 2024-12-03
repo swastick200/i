@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i know you love me </title>
+    <style>
+        body {
+            background-color: #024c6b; /* Light pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://image.shutterstock.com/image-vector/white-pencil-drawing-hearts-seamless-260nw-1513306740.jpg');
+            background-size: cover;
+            animation: backgroundFade 5s infinite alternate;
+        }
+
+        @keyframes backgroundFade {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(0.8); }
+        }
+
+        .popup {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 3px solid #FF69B4;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            animation: popupSlideIn 0.8s ease-in-out;
+            max-width: 320px;
+        }
+
+        @keyframes popupSlideIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .popup h1 {
+            color: #FF69B4;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .popup p {
+            color: #444;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .popup button:hover {
+            transform: translateY(-3px);
+            background-color: #FF1493;
+        }
+
+        .main-content {
+            display: none;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            color: #FF69B4;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .option-box {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            margin: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .option-yes {
+            background: linear-gradient(135deg, #FF69B4, #FF1493);
+        }
+
+        .option-no {
+            background: linear-gradient(135deg, #333, #555);
+        }
+
+        .option-box:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <h1>❤ Please Note ❤</h1>
+        <p>What you're about to see is very serious, so take it seriously or i"ll fuck your mom.</p>
+        <button onclick="showMainContent()">Okay, Got It!</button>
+    </div>
+
+    <div class="main-content">
+        <h1>Anwesha, my beloved, can you give me your dad"s propert along with your boobs,pussy and moms 2? 💖</h1>
+        <div class="option-box option-yes" onclick="showYesMessage()">Yes</div>
+        <div class="option-box option-no" onclick="showNoMessage()">No</div>
+    </div>
+
+    <script>
+        function showMainContent() {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }
+
+        function showYesMessage() {
+            alert("Yay! I knew it! 💖");
+        }
+
+        function showNoMessage() {
+            alert("Oh no! Why not? 😢");
+            let noOption = document.querySelector('.option-no');
+            noOption.textContent = "Yes";
+            noOption.classList.remove('option-no');
+            noOption.classList.add('option-yes');
+            noOption.onclick = showYesMessage;
+        }
+    </script>
+</body>
+</html>
